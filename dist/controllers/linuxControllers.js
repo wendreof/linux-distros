@@ -31,7 +31,7 @@ class LinuxController {
     delete(req, res) {
         const _id = req.params.id;
         linuxServices_1.default.delete(_id)
-            .then(() => helper_1.default.sendResponse("", HttpStatus.OK, `Linux Distro removed with success`))
+            .then(() => helper_1.default.sendResponse(res, HttpStatus.OK, `Linux Distro removed with success!!!!!!!!`))
             .catch(error => console.error.bind(console, `Error ${error}`));
     }
 }

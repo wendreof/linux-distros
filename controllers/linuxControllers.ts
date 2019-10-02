@@ -52,9 +52,9 @@ class LinuxController {
     LinuxService.delete(_id)
       .then(() =>
         Helper.sendResponse(
-          "",
+          res,
           HttpStatus.OK,
-          `Linux Distro removed with success`
+          `Linux Distro removed with success!!!!!!!!`
         )
       )
       .catch(error => console.error.bind(console, `Error ${error}`));
