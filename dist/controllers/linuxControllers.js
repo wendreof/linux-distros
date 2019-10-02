@@ -19,7 +19,12 @@ class LinuxController {
             .then(linuxDistro => this.sendResponse(res, HttpStatus.OK, linuxDistro))
             .catch(error => console.error.bind(console, `Error ${error}`));
     }
-    create(req, res) { }
+    create(req, res) {
+        let vm = req.body;
+        linuxServices_1.default.create(vm)
+            .then(linuxDistro => this.sendResponse(res, HttpStatus.OK, "Linux Distro registered with success"))
+            .catch(error => console.error.bind(console, `Error ${error}`));
+    }
     update(req, res) { }
     delete(req, res) { }
 }
