@@ -95,6 +95,10 @@ public/
 # DynamoDB Local files
 .dynamodb/
 
+infra/password.ts
+dist/infra/password.js
+
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
