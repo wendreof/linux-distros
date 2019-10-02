@@ -1,10 +1,15 @@
 import * as express from "express";
 
+import Database from "./infra/db";
+
 class StartUp {
   public app: express.Application;
+  private _db: Database;
 
   constructor() {
     this.app = express();
+    this._db = new Database();
+    this._db.createConnection();
     this.routes();
   }
 

@@ -1,9 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
+const db_1 = require("./infra/db");
 class StartUp {
     constructor() {
         this.app = express();
+        this._db = new db_1.default();
+        this._db.createConnection();
         this.routes();
     }
     routes() {

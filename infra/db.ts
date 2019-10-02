@@ -1,7 +1,7 @@
 import * as mongoose from "mongoose";
 import SecretPass from "./password";
 
-class Db {
+class Database {
   private DB_URL = `mongodb+srv://wendreof:${SecretPass.masterKey}@wendreof-omnob.azure.mongodb.net/test?retryWrites=true&w=majority`;
 
   createConnection() {
@@ -9,4 +9,4 @@ class Db {
   }
 }
 
-export default Db;
+export default Database;
