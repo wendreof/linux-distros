@@ -34,7 +34,20 @@ class LinuxController {
       .catch(error => console.error.bind(console, `Error ${error}`));
   }
 
-  update(req, res) {}
+  update(req, res) {
+    const _id = req.params.id;
+    let linuxDistro = req.body();
+
+    LinuxService.update(_id, linuxDistro)
+      .then(linuxDistro =>
+        this.sendResponse(
+          res,
+          HttpStatus.OK,
+          `${linuxDistro.title} updated with success`
+        )
+      )
+      .catch(error => console.error.bind(console, `Error ${error}`));
+  }
 
   delete(req, res) {}
 }

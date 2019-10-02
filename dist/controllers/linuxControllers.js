@@ -25,7 +25,13 @@ class LinuxController {
             .then(linuxDistro => this.sendResponse(res, HttpStatus.OK, "Linux Distro registered with success"))
             .catch(error => console.error.bind(console, `Error ${error}`));
     }
-    update(req, res) { }
+    update(req, res) {
+        const _id = req.params.id;
+        let linuxDistro = req.body();
+        linuxServices_1.default.update(_id, linuxDistro)
+            .then(linuxDistro => this.sendResponse(res, HttpStatus.OK, `${linuxDistro.title} updated with success`))
+            .catch(error => console.error.bind(console, `Error ${error}`));
+    }
     delete(req, res) { }
 }
 exports.default = new LinuxController();
