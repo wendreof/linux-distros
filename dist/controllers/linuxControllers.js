@@ -32,6 +32,11 @@ class LinuxController {
             .then(linuxDistro => this.sendResponse(res, HttpStatus.OK, `${linuxDistro.title} updated with success`))
             .catch(error => console.error.bind(console, `Error ${error}`));
     }
-    delete(req, res) { }
+    delete(req, res) {
+        const _id = req.params.id;
+        linuxServices_1.default.delete(_id)
+            .then(() => sendResponse(HttpStatus.OK), `Linux Distro removed with success`)
+            .catch(error => console.error.bind(console, `Error ${error}`));
+    }
 }
 exports.default = new LinuxController();

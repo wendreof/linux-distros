@@ -49,7 +49,16 @@ class LinuxController {
       .catch(error => console.error.bind(console, `Error ${error}`));
   }
 
-  delete(req, res) {}
+  delete(req, res) {
+    const _id = req.params.id;
+
+    LinuxService.delete(_id)
+      .then(
+        () => sendResponse(HttpStatus.OK),
+        `Linux Distro removed with success`
+      )
+      .catch(error => console.error.bind(console, `Error ${error}`));
+  }
 }
 
 export default new LinuxController();
