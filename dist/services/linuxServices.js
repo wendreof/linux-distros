@@ -14,5 +14,8 @@ class LinuxService {
     update(_id, linuxDistro) {
         return linuxRepository_1.default.findByIdAndUpdate(_id, linuxDistro);
     }
+    delete(_id) {
+        return linuxRepository_1.default.findByIdAndRemove(_id);
+    }
 }
 exports.default = new LinuxService();
