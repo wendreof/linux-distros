@@ -12,7 +12,13 @@ class LinuxController {
       .catch(error => console.error.bind(console, `Error ${error}`));
   }
 
-  getById(req, res) {}
+  getById(req, res) {
+    const _id = req.params.id;
+
+    LinuxService.getById(_id)
+      .then(linuxDistro => this.sendResponse(res, HttpStatus.OK, linuxDistro))
+      .catch(error => console.error.bind(console, `Error ${error}`));
+  }
 
   create(req, res) {}
 

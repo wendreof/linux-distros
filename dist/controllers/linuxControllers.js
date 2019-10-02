@@ -13,7 +13,12 @@ class LinuxController {
             .then(linuxDistro => this.sendResponse(res, HttpStatus.OK, linuxDistro))
             .catch(error => console.error.bind(console, `Error ${error}`));
     }
-    getById(req, res) { }
+    getById(req, res) {
+        const _id = req.params.id;
+        linuxServices_1.default.getById(_id)
+            .then(linuxDistro => this.sendResponse(res, HttpStatus.OK, linuxDistro))
+            .catch(error => console.error.bind(console, `Error ${error}`));
+    }
     create(req, res) { }
     update(req, res) { }
     delete(req, res) { }
